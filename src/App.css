@@ -182,3 +182,189 @@
     border-right-color: var(--border);
   }
 }
+/* NEW CSS*/ 
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #f4f4f4;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #333333;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    padding: 0.5rem 0.8rem;
+    border-radius: 6px;
+    transition: 0.2s;
+}
+
+button:hover {
+    opacity: 0.85;
+}
+
+
+.ThriftHappens {
+    min-height: 100vh;
+}
+
+main {
+    display: flex;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    align-items: flex-start;
+}
+
+header {
+    background-color: #2d5a27;
+    padding: 1rem;
+    text-align: centerrgb(255, 255, 255)
+}
+
+header img {
+    max-height: 100px;
+    object-fit: contain;
+}
+
+.NavBar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+.NavLogo img {
+    height: 60px;
+}
+
+.CartCounter {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.ItemContainer {
+    flex: 3;
+}
+
+.ItemContainer h2 {
+    margin-bottom: 1rem;
+}
+
+.ItemGrid {
+    display: grid;
+    grid-template-columns: repeat(
+        auto-fill,
+        minmax(250px, 1fr)
+    );
+    gap: 1rem;
+}
+
+.ItemCard {
+    background-color: white;
+    border-radius: 10px;
+    padding: 1rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.ItemCard h2 {
+    font-size: 1.2rem;
+}
+
+.ItemImg {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.ItemCard button {
+    background-color: #2d5a27;
+    color: white;
+}
+
+.ItemCard div button {
+    margin: 0 0.25rem;
+}
+
+.ItemCard span {
+    font-weight: bold;
+    font-size: 1.1rem;
+    padding: 0 0.5rem;
+}
+
+.CheckoutContainer {
+    flex: 1;
+    min-width: 320px;
+
+    background-color: white;
+    border-radius: 10px;
+    padding: 1rem;
+
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+
+    position: sticky;
+    top: 1rem;
+}
+
+.CheckoutContainer h2 {
+    margin-bottom: 1rem;
+}
+
+.CheckoutContainer h3 {
+    margin-top: 1rem;
+    padding-top: 1rem;
+
+    border-top: 2px solid #cccccc;
+}
+
+.CheckoutCard {
+    display: flex;
+    flex-direction: column;
+
+    gap: 0.4rem;
+
+    padding: 1rem;
+    margin-bottom: 1rem;
+
+    border: 1px solid #dddddd;
+    border-radius: 8px;
+}
+
+.CheckoutItemImg {
+    width: 100%;
+    height: 150px;
+
+    object-fit: cover;
+
+    border-radius: 6px;
+}
+
+.CheckoutCard button {
+    background-color: #c0392b;
+    color: white;
+}
+
+.CheckoutContainer > button {
+    width: 100%;
+    margin-top: 1rem;
+
+    background-color: #555555;
+    color: white;
+}
+
+
+.ItemCard p:last-of-type {
+    font-weight: bold;
+}
+
+.OutOfStock {
+    color: red;
+}

@@ -4,6 +4,7 @@ import {products, type ClothingProduct} from '../data/data';
 // components + types
 import ClothingItemsContainer from "./ClothingItemsContainer";
 import CheckoutContainer from "./CheckoutContainer";
+import NavBar from "./NavBar"
 import type { CartItem } from "../types/CartItem"
 
 
@@ -82,7 +83,7 @@ export default function ThriftHappensApp() {
     return (
         <div className="ThriftHappens">
             <header>
-                <img src="./assets/images/logo.png" alt="logo" />
+                <NavBar cart={cart} />
             </header>
             <main> 
                 <ClothingItemsContainer 
