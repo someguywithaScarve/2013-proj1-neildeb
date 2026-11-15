@@ -3,6 +3,7 @@ import CheckoutCard from "./CheckoutCard";
 
 interface CheckoutContainerProps {
     cart: CartItem[];
+    handleRemoveFromCart: (productID: number) => void;
 }
 
 export default function CheckoutContainer({ cart }: CheckoutContainerProps) {

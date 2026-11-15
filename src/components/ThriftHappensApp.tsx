@@ -52,6 +52,22 @@ export default function ThriftHappensApp() {
         );
    }
 
+   function handleRemoveFromCart (productID: number) {
+        const cartItemToRemove = cart.find(item => 
+            item.product.id === productID);
+        if (!cartItemToRemove) 
+            return;
+        setCart(prevCart => 
+            prevCart.filter(item => item.product.id !== productID)
+        );
+        setInventory(prevInventory => 
+            prevInventory.map(product => {
+                if (product.id !== productID) return product;
+                return {...product, quantity: product.quantity + cartItemToRemove.checkoutQuantity};
+            })
+        );
+   }
+
     return (
         <div className="ThriftHappens">
             <header>
@@ -64,7 +80,9 @@ export default function ThriftHappensApp() {
                     handleAddToCart={handleAddToCart}
                 />
                 <CheckoutContainer
-                cart={cart} />
+                    cart={cart} 
+                    handleRemoveFromCart={handleRemoveFromCart}
+                />
             </main>
         </div>
     )
