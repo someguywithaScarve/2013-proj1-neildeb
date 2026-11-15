@@ -1,14 +1,11 @@
 import { useState } from 'react';
 // data
 import {products, type ClothingProduct} from '../data/data';
-// components
+// components + types
 import ClothingItemsContainer from "./ClothingItemsContainer";
 import CheckoutContainer from "./CheckoutContainer";
+import type { CartItem } from "../types/CartItem"
 
-export interface CartItem {
-    product: ClothingProduct;
-    checkoutQuantity: number;
-}
 
 export default function ThriftHappensApp() {
     const [inventory, setInventory] = useState<ClothingProduct[]>(products);
@@ -68,6 +65,20 @@ export default function ThriftHappensApp() {
         );
    }
 
+   function handleEmptyCheckout() {
+        setInventory(prevInventory =>
+            prevInventory.map(product=> {
+                const cartItem = cart.find(item =>
+                    item.product.id === product.id
+                );
+                if (!cartItem)
+                    return{...product, itemQuantity: 0};
+                return {...product, quantity: product.quantity + cartItem.checkoutQuantity, itemQuantity: 0};
+            })
+        );
+        setCart([]);
+   }
+
     return (
         <div className="ThriftHappens">
             <header>
@@ -82,6 +93,7 @@ export default function ThriftHappensApp() {
                 <CheckoutContainer
                     cart={cart} 
                     handleRemoveFromCart={handleRemoveFromCart}
+                    handleEmptyCheckout={handleEmptyCheckout}
                 />
             </main>
         </div>

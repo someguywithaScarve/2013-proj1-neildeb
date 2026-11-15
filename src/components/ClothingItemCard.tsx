@@ -1,5 +1,5 @@
 import type { ClothingProduct } from "../data/data";
-import type { CartItem } from "./ThriftHappensApp";
+import type { CartItem } from "../types/CartItem"
 
 interface ClothingItemCardProps {
     product: ClothingProduct;
