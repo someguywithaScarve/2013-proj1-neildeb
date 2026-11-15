@@ -1,11 +1,10 @@
 import './App.css';
-import ClothingItemContainer from './components/ClothingItemsContainer';
-import data from './data/data';
+import ThriftHappensApp from "./components/ThriftHappensApp";
 
 function App() {
   return (
-
-  )
+      <ThriftHappensApp />
+  );
 }
 
-export default App
+export default App;
