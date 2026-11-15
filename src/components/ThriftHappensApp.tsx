@@ -20,6 +20,11 @@ export default function ThriftHappensApp() {
     const [inventory, setInventory] = useState<ClothingProduct[]>(products);
     const [cart, setCart] = useState<CartItem[]>([]);
     
+
+
+
+
+    
     return (
         <div className="thrift-happens">
             <header>
